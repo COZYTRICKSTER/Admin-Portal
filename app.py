@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 import database
 
@@ -25,9 +25,7 @@ def login():
     user = cursor.fetchone()
 
     if user:
-        # Check if the provided password matches the stored password
-        if password == user[2]:  # Assuming password is stored in the third column
-            # Redirect to admin portal upon successful login
+        if password == user[2]:
             return redirect(url_for("admin_portal"))
 
     # If credentials are invalid, render login page with error message
@@ -43,11 +41,6 @@ def admin_portal():
 
 @app.route("/admin/customer_list")
 def customer_list():
-    # Retrieve customer data from the database (you need to implement this)
-    # Example: customers = query_customers_from_database()
-
-    # For demonstration, let's assume you have a list of customers
-
     data = database.getCustomers()
     customers = []
 
@@ -67,7 +60,6 @@ def customer_list():
 
 @app.route("/admin/invoice_list")
 def invoice_list():
-
     data = database.getInvoices()
     invoices = []
 

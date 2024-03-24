@@ -1,7 +1,6 @@
 import sqlite3
 
 
-# Function to create the database tables
 def create_tables():
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -38,7 +37,6 @@ def create_tables():
     conn.close()
 
 
-# Function to add a new user to the database
 def add_user(username, password):
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -51,7 +49,6 @@ def add_user(username, password):
     conn.close()
 
 
-# Function to retrieve a user by username
 def get_user_by_username(username):
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -161,7 +158,7 @@ def getInvoiceById(id):
     return data
 
 
-# Example usage:
+# Testing
 if __name__ == "__main__":
     # create_tables()
     # # Add users to the database
@@ -172,6 +169,5 @@ if __name__ == "__main__":
     # add_customer("Jane Smith", "987-654-3210", "jane@example.com", "456 Oak Ave")
     # add_invoice("John Doe", "2024-03-23", 100.00, "Paid")
     # add_invoice("Jane Smith", "2024-03-24", 150.00, "Unpaid")
-    # # Retrieve a user by username
     print(getInvoices())
     # print("User:", user)
