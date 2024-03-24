@@ -48,5 +48,11 @@ This is a simple admin portal application built using Flask and SQLite3. It allo
 - SQLite3
 - HTML/CSS
 
+** Login Credentials 
+username: admin
+password: password
+
+After login, user will be redirected to Admin Portal Homepage.
+
 
 
