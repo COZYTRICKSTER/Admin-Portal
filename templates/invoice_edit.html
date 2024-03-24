@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Invoice</h1>
+        <form action="{{ url_for('edit_invoice', id=invoice.id) }}" method="POST">
+            <label for="customer_id">Customer:</label>
+            <input id="customer_id" name="customer_id" type="text" value="{{invoice.name}}" readonly>
+            <!-- <select id="customer_id" name="customer_id" required>
+            {% for customer in customers %}
+            <option value="{{ customer.id }}" {% if customer.id==invoice.customer_id %} selected {% endif %}>{{
+                customer.name }}</option>
+            {% endfor %}
+        </select><br><br> -->
+
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" value="{{ invoice.date }}" required><br><br>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" value="{{ invoice.amount }}" required><br><br>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="Unpaid" {% if invoice.status=="Unpaid" %} selected {% endif %}>Unpaid</option>
+                <option value="Paid" {% if invoice.status=="Paid" %} selected {% endif %}>Paid</option>
+                <option value="Cancelled" {% if invoice.status=="Cancelled" %} selected {% endif %}>Cancelled</option>
+            </select><br><br>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
