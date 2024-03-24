@@ -38,8 +38,8 @@ This is a simple admin portal application built using Flask and SQLite3. It allo
 ## Usage
 
 - Log in using the provided username and password.
-- Navigate through the sections in the left navigation bar to manage customers and invoices.
-- Add, edit, or delete customer and invoice records as needed.
+- Navigate through the sections to manage customers and invoices.
+- List, Add, edit customer and invoice records as needed.
 
 ## Technologies Used
 
@@ -48,7 +48,8 @@ This is a simple admin portal application built using Flask and SQLite3. It allo
 - SQLite3
 - HTML/CSS
 
-** Login Credentials 
+## Login Credentials 
+
 username: admin
 password: password
 
